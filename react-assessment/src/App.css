@@ -1,0 +1,11 @@
+.App {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.jumbotron{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
