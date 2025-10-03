@@ -34,7 +34,23 @@ function App() {
       }
     }
 
-    return maxOccorenceidex;
+    let longest = "";
+    for (let start of maxOccorenceidex) {
+      for (let end = start; end < arr.length; end++) {
+        let sub = arr.slice(start, end + 1);
+        let distinctInSub = new Set(sub);
+
+        if (distinctInSub.size <= k) {
+          if (sub.length > longest.length) {
+            longest = sub.join("");
+          }
+        } else {
+          break;
+        }
+      }
+    }
+
+    return longest.length;
   };
 
   const handleExecute = (e) => {
@@ -48,9 +64,7 @@ function App() {
     }
 
     //Validation Success
-    //Testing with Hardcoded Values
-    setOutput(longestSubstringWithKDistinct("eceba", 2));
-    // setOutput(longestSubstringWithKDistinct(input1, input2));
+    setOutput(longestSubstringWithKDistinct(input1, input2));
   };
 
   return (
